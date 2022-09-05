@@ -11,8 +11,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var userTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     
-    private let name = "Alexander"
-    private let password = "qaz"
+    let person = Person(name: "Alexander", surname: "Karpinets", password: "qaz")
     
     override func viewDidAppear(_ animated: Bool) {
         userTextfield.text = ""
@@ -20,24 +19,23 @@ class ViewController: UIViewController {
     }
     
     @IBAction func forgotNameButton(_ sender: UIButton) {
-        getAlert(title: "Your name is", message: "Alexander")
+        getAlert(title: "Your fullName is", message: "Alexander Karpinets")
     }
     
     @IBAction func forgotPasswordButton(_ sender: UIButton) {
         getAlert(title: "Your Password", message: "qaz")
         
     }
-    @IBAction func loginButton(_ sender: UIButton) {
-        if userTextfield.text == name && passwordTextfield.text == password {
+    @IBAction func loginButton() {
+        if userTextfield.text == person.fullName && passwordTextfield.text == person.password {
             let helloVC = storyboard?.instantiateViewController(withIdentifier: "HelloViewController") as! HelloViewController
             navigationController?.pushViewController(helloVC, animated: true)
-            helloVC.name = userTextfield.text
+            helloVC.fullname = userTextfield.text
         } else {
-            getAlert(title: "Invalid", message: "Please enter correct your name and password")
+            getAlert(title: "Invalid", message: "Please enter correct your fullName and password")
         }
     }
 }
-
 
 extension ViewController {
     private func getAlert(title: String, message: String) {
@@ -50,6 +48,24 @@ extension ViewController {
         present(alert, animated: true)
     }
 }
+    
+    extension ViewController: UITextViewDelegate {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        view.endEditing(true)
+    }
+        
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == userTextfield {
+            passwordTextfield.becomeFirstResponder()
+        } else {
+            loginButton()
+        }
+        return true
+    }
+}
+
+
 
 
 

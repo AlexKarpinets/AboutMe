@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0A4A3228C661B400CBDB83 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0A4A3128C661B400CBDB83 /* Person.swift */; };
 		FA0D592F28C334CE00722AFA /* HelloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0D592E28C334CE00722AFA /* HelloViewController.swift */; };
 		FA7E4B3528C32CDB00634934 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E4B3428C32CDB00634934 /* AppDelegate.swift */; };
 		FA7E4B3728C32CDB00634934 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E4B3628C32CDB00634934 /* SceneDelegate.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA0A4A3128C661B400CBDB83 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		FA0D592E28C334CE00722AFA /* HelloViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloViewController.swift; sourceTree = "<group>"; };
 		FA7E4B3128C32CDB00634934 /* AboutMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AboutMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA7E4B3428C32CDB00634934 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA0A4A2D28C6613200CBDB83 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				FA7E4B3A28C32CDB00634934 /* Main.storyboard */,
+				FA7E4B3F28C32CDD00634934 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		FA0A4A2E28C6615800CBDB83 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FA7E4B3D28C32CDD00634934 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FA0A4A2F28C6617D00CBDB83 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				FA7E4B3428C32CDB00634934 /* AppDelegate.swift */,
+				FA7E4B3628C32CDB00634934 /* SceneDelegate.swift */,
+				FA7E4B4228C32CDD00634934 /* Info.plist */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		FA0A4A3028C6618A00CBDB83 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FA7E4B3828C32CDB00634934 /* ViewController.swift */,
+				FA0D592E28C334CE00722AFA /* HelloViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		FA0A4A3328C661B900CBDB83 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA0A4A3128C661B400CBDB83 /* Person.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		FA7E4B2828C32CDB00634934 = {
 			isa = PBXGroup;
 			children = (
@@ -58,14 +104,11 @@
 		FA7E4B3328C32CDB00634934 /* AboutMe */ = {
 			isa = PBXGroup;
 			children = (
-				FA7E4B3428C32CDB00634934 /* AppDelegate.swift */,
-				FA7E4B3628C32CDB00634934 /* SceneDelegate.swift */,
-				FA7E4B3828C32CDB00634934 /* ViewController.swift */,
-				FA7E4B3A28C32CDB00634934 /* Main.storyboard */,
-				FA0D592E28C334CE00722AFA /* HelloViewController.swift */,
-				FA7E4B3D28C32CDD00634934 /* Assets.xcassets */,
-				FA7E4B3F28C32CDD00634934 /* LaunchScreen.storyboard */,
-				FA7E4B4228C32CDD00634934 /* Info.plist */,
+				FA0A4A3328C661B900CBDB83 /* Models */,
+				FA0A4A2D28C6613200CBDB83 /* Storyboards */,
+				FA0A4A3028C6618A00CBDB83 /* ViewControllers */,
+				FA0A4A2F28C6617D00CBDB83 /* SupportFiles */,
+				FA0A4A2E28C6615800CBDB83 /* Resources */,
 			);
 			path = AboutMe;
 			sourceTree = "<group>";
@@ -141,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA0A4A3228C661B400CBDB83 /* Person.swift in Sources */,
 				FA7E4B3928C32CDB00634934 /* ViewController.swift in Sources */,
 				FA0D592F28C334CE00722AFA /* HelloViewController.swift in Sources */,
 				FA7E4B3528C32CDB00634934 /* AppDelegate.swift in Sources */,
@@ -293,7 +337,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S3TXMX6C6U;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AboutMe/Info.plist;
+				INFOPLIST_FILE = AboutMe/SupportFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -321,7 +365,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S3TXMX6C6U;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = AboutMe/Info.plist;
+				INFOPLIST_FILE = AboutMe/SupportFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

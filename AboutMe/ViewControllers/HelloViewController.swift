@@ -9,12 +9,12 @@ import UIKit
 
 class HelloViewController: UIViewController {
     @IBOutlet weak var helloLabel: UILabel!
-    var name: String!
+    var fullname: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        helloLabel.text = name
-        helloLabel.text = "Hello, \(name ?? "") !"
+        helloLabel.text = fullname
+        helloLabel.text = "Hello, \(fullname ?? "") !"
     }
     
     @IBAction func logoutButton(_ sender: UIButton) {
