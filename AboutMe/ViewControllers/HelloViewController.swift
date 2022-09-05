@@ -15,6 +15,7 @@ class HelloViewController: UIViewController {
         super.viewDidLoad()
         helloLabel.text = fullname
         helloLabel.text = "Hello, \(fullname ?? "") !"
+
     }
     
     @IBAction func logoutButton(_ sender: UIButton) {
