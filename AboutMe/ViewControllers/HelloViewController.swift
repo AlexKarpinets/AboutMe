@@ -8,18 +8,15 @@
 import UIKit
 
 class HelloViewController: UIViewController {
+    
     @IBOutlet weak var helloLabel: UILabel!
-    var fullname: String!
+    
+    var fullName: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        helloLabel.text = fullname
-        helloLabel.text = "Hello, \(fullname ?? "") !"
-
-    }
-    
-    @IBAction func logoutButton(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        helloLabel.text = fullName
+        helloLabel.text = "Hello, \(fullName ?? "Alexander Karpinets")!"
     }
 }
 

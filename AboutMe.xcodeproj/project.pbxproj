@@ -15,6 +15,7 @@
 		FA7E4B3C28C32CDB00634934 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA7E4B3A28C32CDB00634934 /* Main.storyboard */; };
 		FA7E4B3E28C32CDD00634934 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA7E4B3D28C32CDD00634934 /* Assets.xcassets */; };
 		FA7E4B4128C32CDD00634934 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA7E4B3F28C32CDD00634934 /* LaunchScreen.storyboard */; };
+		FACB7A0C28C79BD40024C360 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACB7A0B28C79BD40024C360 /* AboutViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		FA7E4B3D28C32CDD00634934 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA7E4B4028C32CDD00634934 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA7E4B4228C32CDD00634934 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FACB7A0B28C79BD40024C360 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				FA7E4B3828C32CDB00634934 /* ViewController.swift */,
 				FA0D592E28C334CE00722AFA /* HelloViewController.swift */,
+				FACB7A0B28C79BD40024C360 /* AboutViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FACB7A0C28C79BD40024C360 /* AboutViewController.swift in Sources */,
 				FA0A4A3228C661B400CBDB83 /* Person.swift in Sources */,
 				FA7E4B3928C32CDB00634934 /* ViewController.swift in Sources */,
 				FA0D592F28C334CE00722AFA /* HelloViewController.swift in Sources */,

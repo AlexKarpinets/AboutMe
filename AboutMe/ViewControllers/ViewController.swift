@@ -11,29 +11,40 @@ class ViewController: UIViewController {
     @IBOutlet weak var userTextfield: UITextField!
     @IBOutlet weak var passwordTextfield: UITextField!
     
-    let person = Person(name: "Alexander", surname: "Karpinets", password: "qaz")
+    let person = Person.getPerson()
     
-    override func viewDidAppear(_ animated: Bool) {
-        userTextfield.text = ""
-        passwordTextfield.text = ""
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let tabBarController = segue.destination as? UITabBarController else { return }
+        guard let viewControllers = tabBarController.viewControllers else { return }
+        
+        viewControllers.forEach {
+            if let helloVC = $0 as? HelloViewController {
+                helloVC.fullName = userTextfield.text
+            } else if let navigationVC = $0 as? UINavigationController {
+                let aboutVC = navigationVC.topViewController as! AboutViewController
+                aboutVC.person = person
+            }
+        }
     }
     
     @IBAction func forgotNameButton(_ sender: UIButton) {
-        getAlert(title: "Your fullName is", message: "Alexander Karpinets")
+        getAlert(title: "Your fullName is", message: "\(person.fullName)")
     }
     
     @IBAction func forgotPasswordButton(_ sender: UIButton) {
-        getAlert(title: "Your Password", message: "qaz")
+        getAlert(title: "Your Password", message: "\(person.password)")
         
     }
     @IBAction func loginButton() {
-        if userTextfield.text == person.fullName && passwordTextfield.text == person.password {
-            let helloVC = storyboard?.instantiateViewController(withIdentifier: "HelloViewController") as! HelloViewController
-            navigationController?.pushViewController(helloVC, animated: true)
-            helloVC.fullname = userTextfield.text
-        } else {
+        if userTextfield.text != person.fullName || passwordTextfield.text != person.password {
             getAlert(title: "Invalid", message: "Please enter correct your fullName and password")
+            return
         }
+    }
+    
+    @IBAction func unwindSegue(segue: UIStoryboardSegue) {
+        userTextfield.text = ""
+        passwordTextfield.text = ""
     }
 }
 
@@ -48,13 +59,13 @@ extension ViewController {
         present(alert, animated: true)
     }
 }
-    
-    extension ViewController: UITextViewDelegate {
+
+extension ViewController: UITextViewDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
         view.endEditing(true)
     }
-        
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == userTextfield {
             passwordTextfield.becomeFirstResponder()
